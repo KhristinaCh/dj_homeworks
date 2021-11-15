@@ -1,4 +1,4 @@
-{% extends "articles/base.html" %}
+ {% extends "articles/base.html" %}
 
 {% load static %}
 
@@ -15,8 +15,8 @@
               <a href="#">{{ article.title }}</a>
             </h4>
             <p class="card-text">{{ article.text }}</p>
-            {% for scope in article.scopes.all %}
-              <span class="badge {% if scope.is_main %}badge-primary{% else %}badge-secondary{% endif %}">{{ scope.tag.name }}</span>
+            {% for scope in article.scope_set.all %}
+              <span class="badge {% if scope.is_main %}badge-primary{% else %}badge-secondary{% endif %}">{{ scope.name }}</span>
             {% endfor %}
           </div>
         </div>
